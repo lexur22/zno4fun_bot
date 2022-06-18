@@ -18,12 +18,12 @@ from psycopg2 import Error
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from aiogram.utils.markdown import link, hlink
 
-connection = psycopg2.connect(user="jimutuedzuhodh",
+connection = psycopg2.connect(user="qpaetmuypnwpmu",
                                   # пароль, который указали при установке PostgreSQL
-                                  password="89ab0bd8015f8c19339442cddbc314d0b00eb3e346837c0ebdd926c97393e640",
-                                  host="ec2-3-93-94-34.compute-1.amazonaws.com",
+                                  password="c2254efcb2b856ecdcb5a07880fb4a76e804072c535b02cec04fda3d4137249e",
+                                  host="ec2-99-80-170-190.eu-west-1.compute.amazonaws.com",
                                   port="5432",
-                                  database="deu40gmi2g92o0")
+                                  database="d9tqloddck4jp7")
 connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
 create_users_table = "CREATE TABLE IF NOT EXISTS information (id SERIAL PRIMARY KEY,user_id INTEGER NOT NULL, is_payment VARCHAR)"
 cursor = connection.cursor()
