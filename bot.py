@@ -561,7 +561,8 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
             await answer_for_unpaid_task_22(call, state)
         elif number_of_task == 22:
             await answer_for_unpaid_task_23(call, state)
-           await answer_for_unpaid_task_24(call, state)
+        elif number_of_task == 23:    
+            await answer_for_unpaid_task_24(call, state)
         elif number_of_task == 24:
             await answer_for_free_documentation_task_1(call, state)
 
