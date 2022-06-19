@@ -824,10 +824,8 @@ async def answer_for_unpaid_task_4(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1gong0GyeeUKxwMilEkr8V3hdctjz-tlg/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1NzbN1dft3Kmu26A1y7SGJ92mUR0Kb2el/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1ZAHn0hoYNKKoJS5_5YENrIpBEg8KwA2b/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1S0YMdD0lI7Hz5MN1LnM-O_qZQtTSIDYd/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
