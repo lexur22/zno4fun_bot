@@ -132,7 +132,7 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
             types.InlineKeyboardButton(text="21", callback_data=vote_callback.new(action='task_21')),
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
-            types.InlineKeyboardButton(text=" ", callback_data=vote_callback.new(action='nothing')),
+            types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
             types.InlineKeyboardButton(text="Получить всю теорию", callback_data=vote_callback.new(action='get_all'), pay=True),
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
@@ -170,7 +170,7 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
             types.InlineKeyboardButton(text="21", callback_data=vote_callback.new(action='task_21')),
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
-            types.InlineKeyboardButton(text=" ", callback_data=vote_callback.new(action='nothing')),
+            types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
             types.InlineKeyboardButton(text="Доступ ко всей теории", callback_data=vote_callback.new(action='nothing'))
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
@@ -208,7 +208,7 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
             types.InlineKeyboardButton(text="21", callback_data=vote_callback.new(action='task_21')),
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
-            types.InlineKeyboardButton(text=" ", callback_data=vote_callback.new(action='nothing')),
+            types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
             types.InlineKeyboardButton(text="получить всю теорию", callback_data=vote_callback.new(action='get_all'),
                                        pay=True),
         ]
@@ -391,7 +391,7 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             types.InlineKeyboardButton(text="21", callback_data=vote_callback.new(action='task_21')),
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
-            types.InlineKeyboardButton(text=" ", callback_data=vote_callback.new(action='nothing')),
+            types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
             types.InlineKeyboardButton(text="Доступ ко всей теории", callback_data=vote_callback.new(action='nothing'))
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
@@ -440,7 +440,7 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             types.InlineKeyboardButton(text="21", callback_data=vote_callback.new(action='task_21')),
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
-            types.InlineKeyboardButton(text=" ", callback_data=vote_callback.new(action='nothing')),
+            types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
             types.InlineKeyboardButton(text="получить всю теорию", callback_data=vote_callback.new(action='get_all'),
                                        pay=True),
         ]
@@ -470,7 +470,7 @@ async def get_all_information_about_theory(call: types.CallbackQuery, state: FSM
     await call.answer(cache_time=1)
 
 
-# сообщаем о пустышке
+# сообщаем о пустышке (если она есть)
 @dp.callback_query_handler(vote_callback.filter(action='nothing'), state='*')
 async def answer_about_pass(call: types.CallbackQuery, state: FSMContext):
     text = 'Это пустая кнопка, нажмите на другую'
@@ -562,6 +562,8 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
         elif number_of_task == 22:
             await answer_for_unpaid_task_23(call, state)
         elif number_of_task == 23:
+           await answer_for_unpaid_task_24(call, state)
+        elif number_of_task == 24:
             await answer_for_free_documentation_task_1(call, state)
 
 
@@ -593,6 +595,8 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
             await call.answer(text=text, show_alert=True)
     else:
         if number_of_task == 1:
+            await answer_for_unpaid_task_24(call, state)
+        elif number_of_task == 24:
             await answer_for_unpaid_task_23(call, state)
         elif number_of_task == 23:
             await answer_for_unpaid_task_22(call, state)
@@ -1680,6 +1684,49 @@ async def answer_for_unpaid_task_23(call: types.CallbackQuery, state: FSMContext
         'number_of_task': 23,
     })
 
+    
+# номер 24
+@dp.callback_query_handler(vote_callback.filter(action='task_24'), state=Opportunities.task)
+async def answer_for_unpaid_task_24(call: types.CallbackQuery, state: FSMContext):
+    info = await state.get_data()
+    stroke = f'SELECT is_payment FROM information WHERE user_id = ' + str(info['user_id'])
+    cursor.execute(stroke)
+    connection.commit()
+    state_payment = cursor.fetchone()
+    state_payment = state_payment[0]
+
+    if state_payment == 'unpaid':
+        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        await call.answer(text=text, show_alert=True, cache_time=1)
+    else:
+        text = '<b>ЗАДАНИЕ №24</b>\n\n'
+        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
+
+        # кнопки с сылками на pdf файлы
+        buttons = [
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+        ]
+
+        keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
+        keyboard.add(*buttons)
+        # служебные кнопки
+        buttons_admins = [
+            types.InlineKeyboardButton(text="Назад", callback_data=vote_callback.new(action='back')),
+            types.InlineKeyboardButton(text="Меню", callback_data=vote_callback.new(action='menu')),
+            types.InlineKeyboardButton(text="Вперед", callback_data=vote_callback.new(action='prev')),
+        ]
+        # keyboard = types.InlineKeyboardMarkup(row_width=3, resize_keyboard=False)
+        keyboard.row(*buttons_admins)
+
+        await call.message.edit_text(text=text, reply_markup=keyboard, parse_mode='HTML')
+        await call.answer(cache_time=1)
+
+    await state.update_data({
+        'number_of_task': 24,
+    })
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)   # функция on_startup запускает именно ту функцию, которую нужно отправить куда-либо
