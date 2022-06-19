@@ -133,18 +133,18 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
             types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
-            types.InlineKeyboardButton(text="Отримати всі матеріали", callback_data=vote_callback.new(action='get_all'), pay=True),
+            types.InlineKeyboardButton(text="Получить всю теорию", callback_data=vote_callback.new(action='get_all'), pay=True),
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
         keyboard.add(*buttons)
         buttons_admins = [
-            types.InlineKeyboardButton(text="Детальна інформація", callback_data=vote_callback.new(action='get_all_information')),
+            types.InlineKeyboardButton(text="Подробная информация", callback_data=vote_callback.new(action='get_all_information')),
         ]
         keyboard.row(*buttons_admins)
         await bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard, parse_mode='HTML')
         await Opportunities.task.set()
     elif check_payment == 'paid':
-        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
+        text = 'Это первый бот в телеграмм для подготовки к ЕГЭ по информатике. Здесь собрана вся актуальная информация для подготовки к экзамену.'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
@@ -171,18 +171,18 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
             types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
-            types.InlineKeyboardButton(text="Доступ до всіх матеріалів", callback_data=vote_callback.new(action='nothing'))
+            types.InlineKeyboardButton(text="Доступ ко всей теории", callback_data=vote_callback.new(action='nothing'))
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
         keyboard.add(*buttons)
         buttons_admins = [
-            types.InlineKeyboardButton(text="Детальна інформація", callback_data=vote_callback.new(action='get_all_information')),
+            types.InlineKeyboardButton(text="Подробная информация", callback_data=vote_callback.new(action='get_all_information')),
         ]
         keyboard.row(*buttons_admins)
         await bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard, parse_mode='HTML')
         await Opportunities.task.set()
     else:
-        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
+        text = 'Это первый бот в телеграмм для подготовки к ЕГЭ по информатике. Здесь собрана вся актуальная информация для подготовки к экзамену. '
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
@@ -209,13 +209,13 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
             types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
-            types.InlineKeyboardButton(text="Отримати всі матеріали", callback_data=vote_callback.new(action='get_all'),
+            types.InlineKeyboardButton(text="получить всю теорию", callback_data=vote_callback.new(action='get_all'),
                                        pay=True),
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
         keyboard.add(*buttons)
         buttons_admins = [
-            types.InlineKeyboardButton(text="Детальна інформація",
+            types.InlineKeyboardButton(text="Подробная информация",
                                        callback_data=vote_callback.new(action='get_all_information')),
         ]
         keyboard.row(*buttons_admins)
@@ -253,13 +253,13 @@ class Item:
 
 
 Course = Item(
-    title='Повний матеріал до ЗНО з фізики',
-    description='Купуючи цей курс, ви отримуєте структурований матеріал і повний розбір кожного завдання із ЗНО з фізики \n\n *Для оплати тестового платежу : \nНомер картки - 4242 4242 4242 4242;\nДійсна дата в майбутньому, наприклад 12/34;\nБудь-який тризначний CVC, наприклад 444; \nБудь-які значення для інших полів форми. *\n\n',
-    currency='UAH',
+    title='Вся теория для ЕГЭ 2022',
+    description='При покупке данного курса, вы получаете структурированную теорию для каждого номера ЕГЭ первой части \n\n *Для получения данных для тестового платежа пишите в поддержку*\n\n',
+    currency='RUB',
     prices=[
         LabeledPrice(
-            label='Матеріал',
-            amount=502_00
+            label='Теория',
+            amount=2_899_00
         )
     ],
     start_parameter='pay',
@@ -290,7 +290,7 @@ async def get_all_theory(call: types.CallbackQuery, state: FSMContext):
         [
             [
                 {
-                    "text": 'Оплатити',
+                    "text": 'Оплатить',
                     "pay": True
                 }
             ],
@@ -313,7 +313,7 @@ async def get_all_theory(call: types.CallbackQuery, state: FSMContext):
 # обрабатываем состояние оплаты
 @dp.pre_checkout_query_handler()
 async def process_pre_checkout_query(query: types.PreCheckoutQuery):
-    await bot.answer_pre_checkout_query(pre_checkout_query_id=query.id, ok=True, error_message='Виникла помилка')
+    await bot.answer_pre_checkout_query(pre_checkout_query_id=query.id, ok=True, error_message='Ошибка')
 
 
 # проверяем статус платежа
@@ -365,7 +365,7 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             }
         )
 
-        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену. \n\n Якщо виникли якісь проблеми - @mishkekich'
+        text = 'Это первый бот в телеграмм для подготовки к ЕГЭ по информатике. Здесь собрана вся актуальная информация для подготовки к экзамену. \n\n Если возникли какие-то проблемы - @developer_tt'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
@@ -392,12 +392,12 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
             types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
-            types.InlineKeyboardButton(text="Доступ до всіх матеріалів", callback_data=vote_callback.new(action='nothing'))
+            types.InlineKeyboardButton(text="Доступ ко всей теории", callback_data=vote_callback.new(action='nothing'))
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
         keyboard.add(*buttons)
         buttons_admins = [
-            types.InlineKeyboardButton(text="Детальна інформація",
+            types.InlineKeyboardButton(text="Подробная информация",
                                        callback_data=vote_callback.new(action='get_all_information')),
         ]
         keyboard.row(*buttons_admins)
@@ -414,7 +414,7 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             }
         )
 
-        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену. \n\n Якщо виникли якісь проблеми - @mishkekich'
+        text = 'Это первый бот в телеграмм для подготовки к ЕГЭ по информатике. Здесь собрана вся актуальная информация для подготовки к экзамену. \n\n Если возникли какие-то проблемы - @developer_tt'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
@@ -441,13 +441,13 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             types.InlineKeyboardButton(text="22", callback_data=vote_callback.new(action='task_22')),
             types.InlineKeyboardButton(text="23", callback_data=vote_callback.new(action='task_23')),
             types.InlineKeyboardButton(text="24", callback_data=vote_callback.new(action='task_24')),
-            types.InlineKeyboardButton(text="Отримати всі матеріали", callback_data=vote_callback.new(action='get_all'),
+            types.InlineKeyboardButton(text="получить всю теорию", callback_data=vote_callback.new(action='get_all'),
                                        pay=True),
         ]
         keyboard = types.InlineKeyboardMarkup(row_width=4, resize_keyboard=True)
         keyboard.add(*buttons)
         buttons_admins = [
-            types.InlineKeyboardButton(text="Детальна інформація",
+            types.InlineKeyboardButton(text="Подробная информация",
                                        callback_data=vote_callback.new(action='get_all_information')),
         ]
         keyboard.row(*buttons_admins)
@@ -464,8 +464,8 @@ async def get_all_information_about_theory(call: types.CallbackQuery, state: FSM
     ]
     keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
     keyboard.add(*buttons)
-    text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену.'
-    text = text + 'Ви отримуєте структурований матеріал і повний розбір кожного завдання із ЗНО з фізики. Для пояснення завдання ми наводимо різні рішення, а також наочно показуємо, які рішення краще і чому.'
+    text = 'Это первый бот в телеграмм для подготовки к ЕГЭ по информатике. Здесь собрана вся актуальная информация для подготовки к экзамену.'
+    text = text + 'Вы получаете детальный разбор каждого номера (первой части). Для объяснения задания мы приводим различные решения, а также наглядно показываем какие решения лучше и почему.'
     await call.message.edit_text(text=text, parse_mode='HTML', reply_markup=keyboard)
     await call.answer(cache_time=1)
 
@@ -473,7 +473,7 @@ async def get_all_information_about_theory(call: types.CallbackQuery, state: FSM
 # сообщаем о пустышке (если она есть)
 @dp.callback_query_handler(vote_callback.filter(action='nothing'), state='*')
 async def answer_about_pass(call: types.CallbackQuery, state: FSMContext):
-    text = 'Це пуста кнопка, натисніть на іншу'
+    text = 'Это пустая кнопка, нажмите на другую'
     await call.answer(text=text, cache_time=1)
 
 
@@ -514,7 +514,7 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
         elif number_of_task == 2:
             await answer_for_free_documentation_task_3(call, state)
         elif number_of_task == 3:
-            text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
+            text = 'Вам не доступен этот номер так как вы не оплатили подписку'
             await call.answer(text=text, show_alert=True)
     else:
         if number_of_task == 1:
@@ -591,7 +591,7 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
         elif number_of_task == 2:
             await answer_for_free_documentation_task_1(call, state)
         elif number_of_task == 1:
-            text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
+            text = 'Вам не доступен этот номер так как вы не оплатили подписку'
             await call.answer(text=text, show_alert=True)
     else:
         if number_of_task == 1:
@@ -647,24 +647,7 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
 # номер 1
 @dp.callback_query_handler(vote_callback.filter(action='task_1'), state=Opportunities.task)
 async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state: FSMContext):
-    user_id = call.from_user.id
-    member = await bot.get_chat_member(chat_id=chat, user_id=user_id)
-
-    if member.status == 'left':
-        await call.answer(cache_time=1)
-        text = 'Вы не можете посмотреть этот номер, так как не подписались на канал'
-        await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-        buttons = [
-            types.InlineKeyboardButton(text='Подписаться', url='https://t.me/preparation_eg'),
-            types.InlineKeyboardButton(text='Меню', callback_data=vote_callback.new(action='menu')),
-        ]
-        keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
-        keyboard.add(*buttons)
-        await bot.send_message(chat_id=call.message.chat.id, text=text, reply_markup=keyboard)
-        await state.update_data({
-            'user_id': call.from_user.id,
-        })
-    else:
+ 
         info = await state.get_data()
         message_id = info['message_id']
         text = '<b>ЗАДАНИЕ №1</b>\n\n'
@@ -672,7 +655,8 @@ async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state:
         text = text + '\n\n За правильное выполненное задание получишь <b>1 балл</b>. На решение отводится примерно <b>3 минуты</b>.'
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Втоорой тип задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
