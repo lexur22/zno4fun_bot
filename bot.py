@@ -647,24 +647,13 @@ async def show_next_task(call: types.CallbackQuery, callback_data: vote_callback
 # номер 1
 @dp.callback_query_handler(vote_callback.filter(action='task_1'), state=Opportunities.task)
 async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state: FSMContext):
-    user_id = call.from_user.id
-    member = await bot.get_chat_member(chat_id=chat, user_id=user_id)
+    info = await state.get_data()
+    stroke = f'SELECT is_payment FROM information WHERE user_id = ' + str(info['user_id'])
+    cursor.execute(stroke)
+    connection.commit()
+    state_payment = cursor.fetchone()
+    state_payment = state_payment[0]
 
-    if member.status == 'left':
-        await call.answer(cache_time=1)
-        text = 'Вы не можете посмотреть этот номер, так как не подписались на канал'
-        await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-        buttons = [
-            types.InlineKeyboardButton(text='Подписаться', url='https://t.me/preparation_eg'),
-            types.InlineKeyboardButton(text='Меню', callback_data=vote_callback.new(action='menu')),
-        ]
-        keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
-        keyboard.add(*buttons)
-        await bot.send_message(chat_id=call.message.chat.id, text=text, reply_markup=keyboard)
-        await state.update_data({
-            'user_id': call.from_user.id,
-        })
-    else:
         info = await state.get_data()
         message_id = info['message_id']
         text = '<b>ЗАДАНИЕ №1</b>\n\n'
@@ -672,7 +661,8 @@ async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state:
         text = text + '\n\n За правильное выполненное задание получишь <b>1 балл</b>. На решение отводится примерно <b>3 минуты</b>.'
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Втоорой тип задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
