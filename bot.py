@@ -365,7 +365,7 @@ async def answer_for_back_menu(call: types.CallbackQuery, state: FSMContext):
             }
         )
 
-        text = 'Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену. \n\n Якщо виникли якісь проблеми - @mishkekich'
+        text = 'Я твій помічник при підготовці до ЗНО з фізики Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену. \n\n Якщо виникли якісь проблеми - @mishkekich'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
