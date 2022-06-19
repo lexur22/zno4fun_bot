@@ -681,25 +681,7 @@ async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state:
 # номер 2
 @dp.callback_query_handler(vote_callback.filter(action='task_2'), state=Opportunities.task)
 async def answer_for_free_documentation_task_2(call: types.CallbackQuery, state: FSMContext):
-    user_id = call.from_user.id
-    member = await bot.get_chat_member(chat_id=chat, user_id=user_id)
-
-    if member.status == 'left':
-        await call.answer(cache_time=1)
-        text = 'Вы не можете посмотреть этот номер, так как не подписались на канал'
-        await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-        buttons = [
-            types.InlineKeyboardButton(text='Подписаться', url='https://t.me/preparation_eg'),
-            types.InlineKeyboardButton(text='Меню', callback_data=vote_callback.new(action='menu')),
-        ]
-        keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
-        keyboard.add(*buttons)
-        await bot.send_message(chat_id=call.message.chat.id, text=text, reply_markup=keyboard)
-        await state.update_data({
-            'user_id': call.from_user.id,
-        })
-    else:
-
+    
         info = await state.get_data()
         message_id = info['message_id']
 
@@ -733,23 +715,6 @@ async def answer_for_free_documentation_task_2(call: types.CallbackQuery, state:
 # номер 3
 @dp.callback_query_handler(vote_callback.filter(action='task_3'), state=Opportunities.task)
 async def answer_for_free_documentation_task_3(call: types.CallbackQuery, state: FSMContext):
-    user_id = call.from_user.id
-    member = await bot.get_chat_member(chat_id=chat, user_id=user_id)
-    if member.status == 'left':
-        await call.answer(cache_time=1)
-        text = 'Вы не можете посмотреть этот номер, так как не подписались на канал'
-        await bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-        buttons = [
-            types.InlineKeyboardButton(text='Подписаться', url='https://t.me/preparation_eg'),
-            types.InlineKeyboardButton(text='Меню', callback_data=vote_callback.new(action='menu')),
-        ]
-        keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
-        keyboard.add(*buttons)
-        await bot.send_message(chat_id=call.message.chat.id, text=text, reply_markup=keyboard)
-        await state.update_data({
-            'user_id': call.from_user.id,
-        })
-    else:
 
         info = await state.get_data()
         message_id = info['message_id']
