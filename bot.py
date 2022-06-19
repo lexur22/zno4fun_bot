@@ -672,7 +672,7 @@ async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state:
         text = text + '\n\n За правильное выполненное задание получишь <b>1 балл</b>. На решение отводится примерно <b>3 минуты</b>.'
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://disk.yandex.ru/i/3G9SqyF73N69SA'),
+            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -724,7 +724,7 @@ async def answer_for_free_documentation_task_2(call: types.CallbackQuery, state:
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://disk.yandex.ru/i/od9v8nRWIKYhag'),
+            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1gong0GyeeUKxwMilEkr8V3hdctjz-tlg/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -781,7 +781,7 @@ async def answer_for_free_documentation_task_3(call: types.CallbackQuery, state:
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://disk.yandex.ru/i/NsQyjVPsqKEo4w'),
+            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -824,10 +824,10 @@ async def answer_for_unpaid_task_4(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://disk.yandex.ru/i/bkUapUOOwK2RGQ'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://disk.yandex.ru/i/bkUapUOOwK2RGQ'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://disk.yandex.ru/i/bkUapUOOwK2RGQ'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://disk.yandex.ru/i/bkUapUOOwK2RGQwert'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1gong0GyeeUKxwMilEkr8V3hdctjz-tlg/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1NzbN1dft3Kmu26A1y7SGJ92mUR0Kb2el/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
