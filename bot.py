@@ -144,7 +144,7 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
         await bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard, parse_mode='HTML')
         await Opportunities.task.set()
     elif check_payment == 'paid':
-        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
+        text = 'Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
@@ -182,7 +182,7 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
         await bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard, parse_mode='HTML')
         await Opportunities.task.set()
     else:
-        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
+        text = 'Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
