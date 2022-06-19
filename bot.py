@@ -106,7 +106,7 @@ async def opportunities_bot(message: types.Message, state: FSMContext):
         connection.autocommit = True
         cursor.execute(request, entites)
         connection.commit()
-        text = 'Это первый бот в телеграмм для подготовки к ЕГЭ по информатике. Здесь собрана вся актуальная информация для подготовки к экзамену.'
+        text = 'Вітаю! Я твій помічник при підготовці до ЗНО з фізики. Тут ти знайдеш усю необхідну інформацію для успішного складання екзамену'
 
         buttons = [
             types.InlineKeyboardButton(text="1", callback_data=vote_callback.new(action='task_1')),
