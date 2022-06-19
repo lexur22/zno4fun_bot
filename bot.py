@@ -866,10 +866,9 @@ async def answer_for_unpaid_task_5(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1qXjhk7TJnJAd2cPah48nO5ER5AR3e3lF/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1-ArHVAyJioshYocQVq0zFj0KA3g550Z2/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -910,10 +909,8 @@ async def answer_for_unpaid_task_6(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1VPvtL6xgHbSAaR7cFUzD-HpQLZUyQWPh/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1ddpBGNL_IUHtv7rGPMxfY1h-sQqdnVZ-/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -954,10 +951,9 @@ async def answer_for_unpaid_task_7(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1pET6OrDdyvpPQt6FiMytOUTDt9RdhaFk/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1Cfgb9yODLJvZvgzbpzOPj-p7RWzVJRkl/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -998,10 +994,8 @@ async def answer_for_unpaid_task_8(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1LhcxdNiwKOVJkJc5hu6jZJeHc45-GVH7/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/13u5kmXStqWjJ-x6Qp6orXmSacLaksoce/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1042,10 +1036,9 @@ async def answer_for_unpaid_task_9(call: types.CallbackQuery, state: FSMContext)
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1XYpV4JjTOoZX-DnjdLob5Dt2zGQ1Ge_q/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1YfYnFAEP1pYEunGD-z0NN9chlv39l1pm/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1_JXhQsNWfEM9XwDOUD1GQpVfmDQR5iuf/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1086,10 +1079,8 @@ async def answer_for_unpaid_task_10(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1D5qYV3tfVp2G9INYiwjJlvY_1d8GP00f/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/18i6FpIv3W6HtjGUbCGp6R9jdrRncx-au/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1130,10 +1121,8 @@ async def answer_for_unpaid_task_11(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1t-7K8b4VQORHQWPnfznbMRyB60I4ytkn/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/17tHtUF7fd90tN-ITMrIl6wqgezBBR16i/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1174,10 +1163,8 @@ async def answer_for_unpaid_task_12(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1uqv3_sz0S4pSAl29Qfsjnlbb4O_PswSW/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1QRxxXNWJYCkZd7jWaLG7B3U20-EYVHQ-/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1218,10 +1205,8 @@ async def answer_for_unpaid_task_13(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1Vbh5T4vGwqW-m5RoCKHqrk7ZOXGkFn7P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/173eG9PaGRNCAtdepr49N_Pi-42BvHwQf/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1262,10 +1247,9 @@ async def answer_for_unpaid_task_14(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1upDUFqot1JL_QJDPEo57ULAHiohCIbOK/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1ZloNARc_8dEmeK_EW1zKkiqnJRDNhSaE/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1306,10 +1290,8 @@ async def answer_for_unpaid_task_15(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Задания', url='https://drive.google.com/file/d/1PTY94yvZwvTOQ9eMx2PSu5-WY9CtFN3r/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1350,10 +1332,8 @@ async def answer_for_unpaid_task_16(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1Snp8F2QSpwFUKYxMdv0gMgJwa83tggQG/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1yEgmFaWEO-u0spAt09npNITjn1ffzBy5/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1394,10 +1374,8 @@ async def answer_for_unpaid_task_17(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OgdntVHocZsyHmJW5Wqb1b0_jLmeYdXx/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/11_WwSO1Xe7Z-aGpdHqinJfPr0lHHxnM8/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1438,10 +1416,8 @@ async def answer_for_unpaid_task_18(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1VM3kwd69fPw2l7DpKUsB1_fuRxDoiv8M/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1MOPApNkfkZVCh_c-KLAr1p4majpQCMGa/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1482,10 +1458,10 @@ async def answer_for_unpaid_task_19(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1MuADQ8TojUWnHji4L6JS84KvSCw62j9c/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1nGV4TAtztumN0frH5Pd1vvvo56OozwGe/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1lXpii9ozLWh6OIwqMt1rOXlc59cBo6dq/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1_9HcsHYp0JtmbBXa8txGdt8zKpXyJo97/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1526,10 +1502,10 @@ async def answer_for_unpaid_task_20(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1tAS8oLX0h8Jp5VKaRePvjFxVGapwOxgO/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1hIo-Uqnnw1gZvqf4jkYqi9Qhxcxtd99V/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1hIo-Uqnnw1gZvqf4jkYqi9Qhxcxtd99V/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1Aaq_-rjQTTUlKOmE1R-GW_UvqwvNMefa/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1570,10 +1546,10 @@ async def answer_for_unpaid_task_21(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1FrLI3-m4qnmSk99VHg3EaPgnXnpup5V9/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1VXFTQrUCoEewSD76E2Q2eN4VEYbJ1MIB/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1AN1iQVIyjMFpzPS0qPv73j4qORsZ6UvM/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1wvY7mtB3DrmNNWGMhoBKKhaNtr5c94Af/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1614,10 +1590,9 @@ async def answer_for_unpaid_task_22(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1QoEDh5tDQaAUQwWXj36g7MOOOjj0WgsG/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1kX0mUCn9_bR--ZkCCvp3KvgqRM8dnlpG/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1658,10 +1633,9 @@ async def answer_for_unpaid_task_23(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1o9NZf2GR_JgWjYBBu_dM7Et4eILiAkwJ/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1YerpNHSGGGhYhyDc2N3bZxpYs2npIdUt/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1702,10 +1676,8 @@ async def answer_for_unpaid_task_24(call: types.CallbackQuery, state: FSMContext
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://www.instagram.com/'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://www.instagram.com/'),
+            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1kQGTjspJseqhJUwY6r04lmOLcBSrZxto/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1nQU5hmsr6RdfZdUvMpO8GfDpnHX7aELP/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
