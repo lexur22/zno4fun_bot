@@ -39,9 +39,11 @@ logging.basicConfig(level=logging.INFO)
 env_path = Path('config.env')
 load_dotenv(dotenv_path=env_path)
 
-
+chat = os.getenv('CHAT_ID')
 token = os.getenv('BOT_TOKEN')
 providerToken = os.getenv('PROVIDER_TOKEN')
+
+chat = str(chat)
 
 
 bot = Bot(token=str(token))
@@ -648,12 +650,12 @@ async def answer_for_free_documentation_task_1(call: types.CallbackQuery, state:
  
         info = await state.get_data()
         message_id = info['message_id']
-        text = '<b>ЗАДАНИЕ №1</b>\n\n'
-        text = text + "В данном номере ЕГЭ чаще всего используются две информационные модели — таблицы и схемы. Информация в таблице строится по следующим правилам: на пересечении строки и столбца находится информация, характеризующая комбинацию этой строки и столбца. На схеме информация строится по следующему правилу: если между объектами схемы имеется связь, то она отображается линией, соединяющей названия этих объектов на схеме.\n"
+        text = '<b>Завдання №1</b>\n\n'
+        text = text + "Перш ніж приступити до виконання цього завдання слід звернути увагу на теми «Механіка» та «Основи кінематики» \n"
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OIK9IkbopS0fC-WMkGisxTEj5qp6TE4P/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Втоорой тип задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1yjjYFBYlFNFCbDj_VKMPPmh0jmzWTRP0/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання ', url='https://drive.google.com/file/d/1wgo80FoSPPzTTvymmCyxWkyBlqezndhA/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -682,12 +684,15 @@ async def answer_for_free_documentation_task_2(call: types.CallbackQuery, state:
         info = await state.get_data()
         message_id = info['message_id']
 
-        text = '<b>ЗАДАНИЕ №2</b>\n\n'
-        text = text + 'Для выполнения задания 2 по информатике необходимо знать - обозначения логических операций, например таких как дизъюнкция, конъюнкция и других.\n'
+        text = '<b>Завдання №2</b>\n\n'
+        text = text + 'Для виконання цього завдання слід звернути увагу на теми «Механіка» та «Основи динаміки»\n'
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1gong0GyeeUKxwMilEkr8V3hdctjz-tlg/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1Ijd5uEWR8lMRDs8nee8xB_eqhrm23fOU/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1jTI9WNi7x9uLKb883T0Y-pu4thNUt_w6/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третій тип завдання', url='https://drive.google.com/file/d/14L53Vj2n1LIiYFvOCferP3y1KBmS8ZW6/view?usp=sharing'),
+
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -716,18 +721,14 @@ async def answer_for_free_documentation_task_3(call: types.CallbackQuery, state:
         info = await state.get_data()
         message_id = info['message_id']
 
-        text = '<b>ЗАДАНИЕ №3</b>\n\n'
-        text = text + '<b>Поиск и сортировка информации в базах данных</b>\n\n'
-        text = text + 'Для выполнения задания 3 по информатике необходимо знать:\n'
-        text = text + '🔹 столбцы таблицы называются полями, а строки – записями\n'
-        text = text + '🔹 каждая таблица содержит описание одного типа объектов (человека, бригады, самолета) или одного типа связей между объектами (например, связь между автомобилем и его владельцем)\n'
-        text = text + '🔹 в каждой таблице есть ключ – некоторое значение (это может быть одно поле или комбинация полей), которое отличает одну запись от другой; в таблице не может быть двух записей с одинаковыми значениями ключа\n'
-        text = text + '🔹 на практике часто используют суррогатные ключи – искусственно введенное числовое поле (обычно оно называется идентификатор, ID).\n'
-
+        text = '<b>Завдання №3</b>\n\n'
+        text = text + 'Дане завдання включає в себе поняття із розділу механіки, про закон збереження в механіці і рівномірний рух по колу\n'
 
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Разбор задания', url='https://drive.google.com/file/d/1i-2d3UpC_hikdgtDHkupVjHy6ySZh3MU/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1gRJ6LN8REfe8s-l7SwMYBclJRhnXL4HL/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1S4ebj8KhRlahyKA6FP_HcRcRtKYhbgCA/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третій тип завдання', url='https://drive.google.com/file/d/1wGZm0PR3weD_f0fvbxLNnkqPH0iDt8RA/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -762,16 +763,16 @@ async def answer_for_unpaid_task_4(call: types.CallbackQuery, state: FSMContext)
 
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №4</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №4</b>\n\n'
+        text = text + 'Завдання вимагає розуміння властивостей елементів елементів рідин і газів\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1ZAHn0hoYNKKoJS5_5YENrIpBEg8KwA2b/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1S0YMdD0lI7Hz5MN1LnM-O_qZQtTSIDYd/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1ZAHn0hoYNKKoJS5_5YENrIpBEg8KwA2b/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1S0YMdD0lI7Hz5MN1LnM-O_qZQtTSIDYd/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -804,16 +805,16 @@ async def answer_for_unpaid_task_5(call: types.CallbackQuery, state: FSMContext)
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №5</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №5</b>\n\n'
+        text = text + 'Завдання скеровано на перевірку розуміння властивостей газів, рідин і твердих тіл\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1qXjhk7TJnJAd2cPah48nO5ER5AR3e3lF/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1-ArHVAyJioshYocQVq0zFj0KA3g550Z2/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1qXjhk7TJnJAd2cPah48nO5ER5AR3e3lF/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1-ArHVAyJioshYocQVq0zFj0KA3g550Z2/view?usp=sharing'),
 
         ]
 
@@ -847,16 +848,16 @@ async def answer_for_unpaid_task_6(call: types.CallbackQuery, state: FSMContext)
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №6</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №6</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання розуміння поняття ізопроцесів, внутрішньої енергії і вміння розрахувати роботу в термодинамічних процесах\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1VPvtL6xgHbSAaR7cFUzD-HpQLZUyQWPh/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1ddpBGNL_IUHtv7rGPMxfY1h-sQqdnVZ-/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1VPvtL6xgHbSAaR7cFUzD-HpQLZUyQWPh/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1ddpBGNL_IUHtv7rGPMxfY1h-sQqdnVZ-/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -889,16 +890,16 @@ async def answer_for_unpaid_task_7(call: types.CallbackQuery, state: FSMContext)
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №7</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №7</b>\n\n'
+        text = text + 'Для виконання цього завдання слід на теми молекулярної фізики й термодинаміки\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1pET6OrDdyvpPQt6FiMytOUTDt9RdhaFk/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1Cfgb9yODLJvZvgzbpzOPj-p7RWzVJRkl/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1pET6OrDdyvpPQt6FiMytOUTDt9RdhaFk/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1Cfgb9yODLJvZvgzbpzOPj-p7RWzVJRkl/view?usp=sharing'),
 
         ]
 
@@ -932,16 +933,16 @@ async def answer_for_unpaid_task_8(call: types.CallbackQuery, state: FSMContext)
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №8</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №8</b>\n\n'
+        text = text + 'Дане завдання має відношення до розділу елекродинаміки, а саме основ електростатики та явищ й законів електромагнітної індукції\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1LhcxdNiwKOVJkJc5hu6jZJeHc45-GVH7/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/13u5kmXStqWjJ-x6Qp6orXmSacLaksoce/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1LhcxdNiwKOVJkJc5hu6jZJeHc45-GVH7/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/13u5kmXStqWjJ-x6Qp6orXmSacLaksoce/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -974,17 +975,17 @@ async def answer_for_unpaid_task_9(call: types.CallbackQuery, state: FSMContext)
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №9</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №9</b>\n\n'
+        text = text + 'Для виконання цього завдання слід розуміти в розділі електродинаміки, зокрема закони постійного струму, магнітне поле і явище магнітної індукції\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1XYpV4JjTOoZX-DnjdLob5Dt2zGQ1Ge_q/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1YfYnFAEP1pYEunGD-z0NN9chlv39l1pm/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1_JXhQsNWfEM9XwDOUD1GQpVfmDQR5iuf/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1XYpV4JjTOoZX-DnjdLob5Dt2zGQ1Ge_q/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1YfYnFAEP1pYEunGD-z0NN9chlv39l1pm/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третій тип завдання', url='https://drive.google.com/file/d/1_JXhQsNWfEM9XwDOUD1GQpVfmDQR5iuf/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1017,16 +1018,16 @@ async def answer_for_unpaid_task_10(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №10</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №10</b>\n\n'
+        text = text + 'Для успішного рішення цього завдання слід розумітися в темах електромагнітних коливань, магнітного поля та явища магнітної індукції\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1D5qYV3tfVp2G9INYiwjJlvY_1d8GP00f/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/18i6FpIv3W6HtjGUbCGp6R9jdrRncx-au/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1D5qYV3tfVp2G9INYiwjJlvY_1d8GP00f/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/18i6FpIv3W6HtjGUbCGp6R9jdrRncx-au/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1059,16 +1060,16 @@ async def answer_for_unpaid_task_11(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №11</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №11</b>\n\n'
+        text = text + 'Основою завдання є розділ оптики, зокрема закон заломлення світла\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1t-7K8b4VQORHQWPnfznbMRyB60I4ytkn/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/17tHtUF7fd90tN-ITMrIl6wqgezBBR16i/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1t-7K8b4VQORHQWPnfznbMRyB60I4ytkn/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/17tHtUF7fd90tN-ITMrIl6wqgezBBR16i/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1101,16 +1102,16 @@ async def answer_for_unpaid_task_12(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №12</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №12</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання розуміння корпусклярно-ївильвої природи світла і явищ інтерференції, дифрації, дисперсії і фотоефекту\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1uqv3_sz0S4pSAl29Qfsjnlbb4O_PswSW/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1QRxxXNWJYCkZd7jWaLG7B3U20-EYVHQ-/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1uqv3_sz0S4pSAl29Qfsjnlbb4O_PswSW/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1QRxxXNWJYCkZd7jWaLG7B3U20-EYVHQ-/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1143,16 +1144,16 @@ async def answer_for_unpaid_task_13(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №13</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №13</b>\n\n'
+        text = text + 'Для виконання цього завдання слід звернути увагу на теми «Квантова фізика» та «Атом й атомне ядро»\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1Vbh5T4vGwqW-m5RoCKHqrk7ZOXGkFn7P/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/173eG9PaGRNCAtdepr49N_Pi-42BvHwQf/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1Vbh5T4vGwqW-m5RoCKHqrk7ZOXGkFn7P/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/173eG9PaGRNCAtdepr49N_Pi-42BvHwQf/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1185,16 +1186,16 @@ async def answer_for_unpaid_task_14(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №14</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №14</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання розуміння процесу ядерного розпаду й вміння аланізувати рівняння ядерних реакцій\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1upDUFqot1JL_QJDPEo57ULAHiohCIbOK/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1ZloNARc_8dEmeK_EW1zKkiqnJRDNhSaE/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1upDUFqot1JL_QJDPEo57ULAHiohCIbOK/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1ZloNARc_8dEmeK_EW1zKkiqnJRDNhSaE/view?usp=sharing'),
 
         ]
 
@@ -1228,15 +1229,15 @@ async def answer_for_unpaid_task_15(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №15</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №15</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння вирішувати розрахункові задачі із додавання швидкостей\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Задания', url='https://drive.google.com/file/d/1PTY94yvZwvTOQ9eMx2PSu5-WY9CtFN3r/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Завдання', url='https://drive.google.com/file/d/1PTY94yvZwvTOQ9eMx2PSu5-WY9CtFN3r/view?usp=sharing'),
 
         ]
 
@@ -1270,16 +1271,16 @@ async def answer_for_unpaid_task_16(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №16</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №16</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння вирішувати розрахукові задачі про механічні хвилі і коливання, а також вміння вміння використовувати закон збереження імпульс на практиці\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1Snp8F2QSpwFUKYxMdv0gMgJwa83tggQG/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1yEgmFaWEO-u0spAt09npNITjn1ffzBy5/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1Snp8F2QSpwFUKYxMdv0gMgJwa83tggQG/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1yEgmFaWEO-u0spAt09npNITjn1ffzBy5/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1312,16 +1313,16 @@ async def answer_for_unpaid_task_17(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №17</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №17</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння аналізувати графіки ізопроцесів та рівняння стану ідеального газу\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1OgdntVHocZsyHmJW5Wqb1b0_jLmeYdXx/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/11_WwSO1Xe7Z-aGpdHqinJfPr0lHHxnM8/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1OgdntVHocZsyHmJW5Wqb1b0_jLmeYdXx/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/11_WwSO1Xe7Z-aGpdHqinJfPr0lHHxnM8/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1354,16 +1355,16 @@ async def answer_for_unpaid_task_18(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №18</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №18</b>\n\n'
+        text = text + 'Завдання скеровано на перевірку вміння розв’язувати розрахункові задачі за допомогою закону Ома для повного кола, а також вміння інтерпретувати схеми електричного кола\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1VM3kwd69fPw2l7DpKUsB1_fuRxDoiv8M/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1MOPApNkfkZVCh_c-KLAr1p4majpQCMGa/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1VM3kwd69fPw2l7DpKUsB1_fuRxDoiv8M/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1MOPApNkfkZVCh_c-KLAr1p4majpQCMGa/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1396,18 +1397,18 @@ async def answer_for_unpaid_task_19(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №19</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №19</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння вирішувати розрахункові задачі із розділів механіки і основ динаміки\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1MuADQ8TojUWnHji4L6JS84KvSCw62j9c/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1nGV4TAtztumN0frH5Pd1vvvo56OozwGe/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1lXpii9ozLWh6OIwqMt1rOXlc59cBo6dq/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1_9HcsHYp0JtmbBXa8txGdt8zKpXyJo97/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1MuADQ8TojUWnHji4L6JS84KvSCw62j9c/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1nGV4TAtztumN0frH5Pd1vvvo56OozwGe/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третій тип завдання', url='https://drive.google.com/file/d/1lXpii9ozLWh6OIwqMt1rOXlc59cBo6dq/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертий тип завдання', url='https://drive.google.com/file/d/1_9HcsHYp0JtmbBXa8txGdt8zKpXyJo97/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1440,18 +1441,18 @@ async def answer_for_unpaid_task_20(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №20</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №20</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння вирішувати розрахункові задачі із розділів молекулярної фізики і термодинаміки\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1tAS8oLX0h8Jp5VKaRePvjFxVGapwOxgO/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1hIo-Uqnnw1gZvqf4jkYqi9Qhxcxtd99V/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1hIo-Uqnnw1gZvqf4jkYqi9Qhxcxtd99V/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1Aaq_-rjQTTUlKOmE1R-GW_UvqwvNMefa/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1tAS8oLX0h8Jp5VKaRePvjFxVGapwOxgO/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1hIo-Uqnnw1gZvqf4jkYqi9Qhxcxtd99V/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третій тип завдання', url='https://drive.google.com/file/d/1hIo-Uqnnw1gZvqf4jkYqi9Qhxcxtd99V/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертий тип завдання', url='https://drive.google.com/file/d/1Aaq_-rjQTTUlKOmE1R-GW_UvqwvNMefa/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1484,18 +1485,18 @@ async def answer_for_unpaid_task_21(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №21</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №21</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння вирішувати розрахункові задачі із розділу електродинаміки\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1FrLI3-m4qnmSk99VHg3EaPgnXnpup5V9/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1VXFTQrUCoEewSD76E2Q2eN4VEYbJ1MIB/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Третий тип задания', url='https://drive.google.com/file/d/1AN1iQVIyjMFpzPS0qPv73j4qORsZ6UvM/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Четвертый тип задания', url='https://drive.google.com/file/d/1wvY7mtB3DrmNNWGMhoBKKhaNtr5c94Af/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1FrLI3-m4qnmSk99VHg3EaPgnXnpup5V9/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1VXFTQrUCoEewSD76E2Q2eN4VEYbJ1MIB/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Третій тип завдання', url='https://drive.google.com/file/d/1AN1iQVIyjMFpzPS0qPv73j4qORsZ6UvM/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Четвертий тип завдання ', url='https://drive.google.com/file/d/1wvY7mtB3DrmNNWGMhoBKKhaNtr5c94Af/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
@@ -1528,16 +1529,16 @@ async def answer_for_unpaid_task_22(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №22</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №22</b>\n\n'
+        text = text + 'Завдання скеровано на оцінювання вміння розв’язувати розрахункові задачі пов’язаними із механічними коливаннями\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1QoEDh5tDQaAUQwWXj36g7MOOOjj0WgsG/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1kX0mUCn9_bR--ZkCCvp3KvgqRM8dnlpG/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1QoEDh5tDQaAUQwWXj36g7MOOOjj0WgsG/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1kX0mUCn9_bR--ZkCCvp3KvgqRM8dnlpG/view?usp=sharing'),
 
         ]
 
@@ -1571,16 +1572,16 @@ async def answer_for_unpaid_task_23(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №23</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №23</b>\n\n'
+        text = text + 'Завдання скеровано на перевірку вміння розв’язувати розрахункові задачі із розділу оптики\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1o9NZf2GR_JgWjYBBu_dM7Et4eILiAkwJ/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1YerpNHSGGGhYhyDc2N3bZxpYs2npIdUt/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1o9NZf2GR_JgWjYBBu_dM7Et4eILiAkwJ/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1YerpNHSGGGhYhyDc2N3bZxpYs2npIdUt/view?usp=sharing'),
 
         ]
 
@@ -1614,16 +1615,16 @@ async def answer_for_unpaid_task_24(call: types.CallbackQuery, state: FSMContext
     state_payment = state_payment[0]
 
     if state_payment == 'unpaid':
-        text = 'Вам не доступен этот номер так как вы не оплатили подписку'
+        text = 'Вам недоступний цей номер, оскільки ви не оплатили матеріал'
         await call.answer(text=text, show_alert=True, cache_time=1)
     else:
-        text = '<b>ЗАДАНИЕ №24</b>\n\n'
-        text = text + 'бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла бла-бла-бла'
-
+        text = '<b>Завдання №24</b>\n\n'
+        text = text + 'Завдання скеровано на перевірку вміння розв’язувати комплексні задачі із розділу квантової фізики\n'
+        
         # кнопки с сылками на pdf файлы
         buttons = [
-            types.InlineKeyboardButton(text='Первый тип задания', url='https://drive.google.com/file/d/1kQGTjspJseqhJUwY6r04lmOLcBSrZxto/view?usp=sharing'),
-            types.InlineKeyboardButton(text='Второй тип задания', url='https://drive.google.com/file/d/1nQU5hmsr6RdfZdUvMpO8GfDpnHX7aELP/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Перший тип завдання', url='https://drive.google.com/file/d/1kQGTjspJseqhJUwY6r04lmOLcBSrZxto/view?usp=sharing'),
+            types.InlineKeyboardButton(text='Другий тип завдання', url='https://drive.google.com/file/d/1nQU5hmsr6RdfZdUvMpO8GfDpnHX7aELP/view?usp=sharing'),
         ]
 
         keyboard = types.InlineKeyboardMarkup(row_width=1, resize_keyboard=True)
