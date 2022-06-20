@@ -39,11 +39,9 @@ logging.basicConfig(level=logging.INFO)
 env_path = Path('config.env')
 load_dotenv(dotenv_path=env_path)
 
-chat = os.getenv('CHAT_ID')
+
 token = os.getenv('BOT_TOKEN')
 providerToken = os.getenv('PROVIDER_TOKEN')
-
-chat = str(chat)
 
 
 bot = Bot(token=str(token))
